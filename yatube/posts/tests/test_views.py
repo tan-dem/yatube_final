@@ -236,7 +236,7 @@ class PostsViewsTests(TestCase):
             content=small_gif,
             content_type='image/gif'
         )
-        post_with_image = Post.objects.create(
+        Post.objects.create(
             author=self.author,
             text='Test post text',
             group=self.group,
