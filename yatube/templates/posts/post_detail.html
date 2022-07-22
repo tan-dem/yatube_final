@@ -36,7 +36,7 @@
     {% endthumbnail %}
       <p>{{ post.text }}</p>
     {% if user.is_authenticated and user == post.author %}
-      <a class="btn btn-primary" href="{% url 'posts:post_edit' post.pk%}">
+      <a class="btn btn-secondary" href="{% url 'posts:post_edit' post.pk%}">
         Редактировать запись
       </a>
     {% endif %}
