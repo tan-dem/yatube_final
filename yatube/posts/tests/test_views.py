@@ -328,6 +328,10 @@ class PostsViewsTests(TestCase):
         """Проверка, что авторизованный пользователь может удалять
         пользователей из подписок."""
         follow_count = Follow.objects.count()
+        Follow.objects.create(
+            user=self.user_follower,
+            author=self.author,
+        )
         self.authorized_follower.get(
             reverse(
                 'posts:profile_unfollow',
