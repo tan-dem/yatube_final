@@ -18,6 +18,8 @@
   <br>
    <a href="{% url 'posts:post_detail' post.pk %}">подробная информация </a>
   <br>
+  {% if user.is_authenticated and user == post.author %}
    <a href="{% url 'posts:post_edit' post.pk %}">редактировать</a>
+  {% endif %}
   {% if not forloop.last %}<hr>{% endif %}
  </article>

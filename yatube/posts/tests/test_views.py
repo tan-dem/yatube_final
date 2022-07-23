@@ -312,9 +312,9 @@ class PostsViewsTests(TestCase):
         response_final = self.guest_client.get(reverse('posts:index'))
         self.assertNotEqual(response_final.content, content_initial)
 
-    def test_user_can_follow_and_unfollow_author(self):
+    def test_user_can_follow_author(self):
         """Проверка, что авторизованный пользователь может подписываться
-        на других пользователей и удалять их из подписок."""
+        на других пользователей."""
         follow_count = Follow.objects.count()
         self.authorized_follower.get(
             reverse(
@@ -323,6 +323,11 @@ class PostsViewsTests(TestCase):
             ),
         )
         self.assertEqual(Follow.objects.count(), follow_count + 1)
+
+    def test_user_can_unfollow_author(self):
+        """Проверка, что авторизованный пользователь может удалять
+        пользователей из подписок."""
+        follow_count = Follow.objects.count()
         self.authorized_follower.get(
             reverse(
                 'posts:profile_unfollow',

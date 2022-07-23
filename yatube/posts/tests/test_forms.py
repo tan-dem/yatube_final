@@ -111,7 +111,7 @@ class CommentFormTest(TestCase):
         self.authorized_client.force_login(self.author)
 
     def test_add_comment(self):
-        """После успешной отправки комментарий появляется на странице поста."""
+        """После успешной отправки формы в базе данных создан комментарий."""
         post = self.post
         comments_count = post.comments.count()
         form_data = {

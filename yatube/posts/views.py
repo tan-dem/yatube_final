@@ -43,10 +43,9 @@ def profile(request, username):
     template = 'posts/profile.html'
     author = get_object_or_404(User, username=username)
     post_list = author.posts.all()
-    if author.following.filter(author=author).all():
-        following = True
-    else:
-        following = False
+    following = request.user.is_authenticated and author.following.filter(
+        user=request.user
+    ).exists()
     page_obj = get_page(request, post_list, POSTS_PER_PAGE)
     context = {
         'author': author,

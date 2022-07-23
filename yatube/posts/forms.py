@@ -16,6 +16,7 @@ class PostForm(forms.ModelForm):
         help_texts = {
             'text': _('Текст нового поста'),
             'group': _('Группа, к которой будет относиться пост'),
+            'image': _('Здесь можно добавить картинку к посту'),
         }
 
 
@@ -25,4 +26,7 @@ class CommentForm(forms.ModelForm):
         fields = ('text',)
         labels = {
             'text': _('Комментарий'),
+        }
+        help_texts = {
+            'text': _('Текст комментария'),
         }
