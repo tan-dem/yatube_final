@@ -1,9 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}Об авторе проекта{% endblock %}
+{% load static %}
 {% block content %}
-<h1>Привет, я автор</h1>
-<p>
-  Тут я размещу информацию о себе, используя свои умения верстать.
-  Картинки, блоки, элементы бустрап. А может быть, просто напишу несколько абзацев текста.
-</p>
+<h1>Привет от автора проекта! </h1>
+<img src="{% static 'img/about.jpeg' %}" class="d-inline-block align-top" alt="">
 {% endblock %}
