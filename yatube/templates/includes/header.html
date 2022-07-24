@@ -1,6 +1,6 @@
 {% load static %}
 <header>
-  <nav class="navbar navbar-light" style="background-color: lightskyblue">
+  <nav class="navbar navbar-light" style="background-color: #AED6F1">
     <div class="container">
       <a class="navbar-brand" href="{% url 'posts:index' %}">
         <img src="{% static 'img/logo.png' %}" width="30" height="30"
@@ -12,7 +12,7 @@
                     <a class="nav-link
                     {% if view_name  == 'about:author' %}
                     active{% endif %}"
-                      href="{% url 'about:author' %}">
+                      href="{% url 'about:author' %}" style="color: #17202A">
                       Об авторе
                     </a>
                   </li>
@@ -20,7 +20,7 @@
                     <a class="nav-link
                     {% if view_name  == 'about:tech' %}
                     active{% endif %}"
-                      href="{% url 'about:tech' %}">
+                      href="{% url 'about:tech' %}" style="color: #17202A">
                       Технологии
                     </a>
                   </li>
@@ -29,12 +29,13 @@
                       <a class="nav-link
                       {% if view_name  == 'posts:post_create' %}
                         active{% endif %}"
-                         href="{% url 'posts:post_create' %}">
+                         href="{% url 'posts:post_create' %}"
+                         style="color: #17202A">
                         Новая запись
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link link-light
+                      <a class="nav-link link-dark
                         {% if view_name  == 'users:password_change' %}
                         active{% endif %}"
                          href="{% url 'users:password_change' %}">
@@ -42,7 +43,7 @@
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link link-light
+                      <a class="nav-link link-dark
                         {% if view_name  == 'users:logout' %}
                         active{% endif %}"
                          href="{% url 'users:logout' %}">
